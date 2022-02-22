@@ -63,10 +63,19 @@ void render()
 
 void setup()
 {
+
+
+    time_t t = std::time(0);
+    tm* now = std::localtime(&t);
+
+    int seed = now->tm_sec * now->tm_mday;
+    srand(seed);
+
     //number of starting cells
-    for (l=0; l<(300); l++)
+    for (l=0; l<(350); l++)
     {
         // Need to set srand to the time or something
+
 
 
         rand_y = rand()%(dimension+1);
@@ -176,3 +185,4 @@ int main()
     }
     return 0;
 }
+
